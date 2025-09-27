@@ -4,7 +4,7 @@ import { getUserId } from '../lib/userAuth'
 
 const CONFIRM_MESSAGE = 'Are you sure you want to delete the score?'
 
-const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
+const ScoreCard = ({ id, playedAt, totalScore, userId, userName, number_of_holes }) => {
   const { deleteScore } = useScoreDelete(id)
 
   return (
@@ -14,7 +14,7 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
           {playedAt}
         </div>
         <div>
-          {`${userName} posted a score of ${totalScore}`}
+          {`${userName} posted a score of ${totalScore} (${number_of_holes} - holes)`}
         </div>
       </div>
       <div className="w-1/6">
